@@ -50,5 +50,6 @@ public class AppTest
         System.out.println(i.toString());
         System.out.println(i.getQuantity());
         System.out.println(i.getQuantityPrice() + "원");
-    }
+        System.out.println(i.getDiscountPrice() + "원");
+    }   
 }

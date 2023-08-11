@@ -23,9 +23,9 @@ public class Item {
     Date regdate;
 
     // 수량과 가격을 곱하여 총판매금액 출력
-    public int getQuantityPrice() {
-        int ret = this.quantity * this.price;
-        return ret;
+    public int getTotalPrice() {
+        int totalprice = this.quantity * this.price;
+        return totalprice;
     }
 
     // 재고 수량이 100개 미만이면 1 반환, 이상이면 2 반환
@@ -34,5 +34,10 @@ public class Item {
             return 1;
         }
         return 2;
+    }
+
+    public int getDiscountPrice() {
+        int disprice = this.price - (int)(this.price*0.2);
+        return disprice;
     }
 }
