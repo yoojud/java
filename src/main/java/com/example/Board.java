@@ -1,6 +1,18 @@
 package com.example;
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+
 // 실행불가 클래스 
 public class Board {
 
@@ -10,57 +22,20 @@ public class Board {
     String title = null; //제목
     String content = null; //내용
     String writer = null; // 작성자
-    Date regdate = null; //등록일
+    Date regdate; //등록일o
 
-
-    //source action => getter or setter 만들기
-    public int getNo() {
-        return no;
+    // 조회수 1씩 증가시키는 기능
+    public int updateHit() {
+        this.hit++;
+        return this.hit;
     }
 
-    public void setNo(int no) {
-        this.no = no;
+    // 제목이 20자 이상이면 자르는 기능 ex)rksk....
+    public String cutTitle() {
+        if(this.title.length()<20){
+            return this.title;
+        }
+        //else
+        return this.title.substring(0, 20);
     }
-
-    public int getHit() {
-        return hit;
-    }
-
-    public void setHit(int hit) {
-        this.hit = hit;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getWriter() {
-        return writer;
-    }
-
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
-
-    public Date getRegdate() {
-        return regdate;
-    }
-
-    public void setRegdate(Date regdate) {
-        this.regdate = regdate;
-    }
-
-    
 }

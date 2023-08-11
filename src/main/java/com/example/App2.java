@@ -17,6 +17,8 @@ public class App2 {
         System.out.println(sum);
         System.out.println((float)sum/(float)a.length);
 
+        sc.close();
+
         // //Q2> 배열 a의 값 입력받고, 10을 더한 수 출력
         // int a[] = new int[4];
         // Scanner sc = new Scanner(System.in);
