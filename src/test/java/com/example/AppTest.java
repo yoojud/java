@@ -48,5 +48,7 @@ public class AppTest
         i.setPrice(15000);
 
         System.out.println(i.toString());
+        System.out.println(i.getQuantity());
+        System.out.println(i.getQuantityPrice() + "원");
     }
 }
