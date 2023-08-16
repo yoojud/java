@@ -15,10 +15,10 @@ import lombok.ToString;
 @NoArgsConstructor
 
 public class Item {
-    int no = 0;
-    String name = null;
-    String content = null;
-    int quantity = 0;
+    long no;
+    String name;
+    String content;
+    int quantity; 
     int price = 0;
     Date regdate;
 
@@ -36,8 +36,9 @@ public class Item {
         return 2;
     }
 
-    public int getDiscountPrice() {
-        int disprice = this.price - (int)(this.price*0.2);
+    // 가격 할인
+    public long getDiscountPrice(float rate) {
+        long disprice = this.price - (long)(this.price*rate);
         return disprice;
     }
 }

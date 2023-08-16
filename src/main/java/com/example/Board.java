@@ -13,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 
-// 실행불가 클래스 
+// 실행불가 클래스
 public class Board {
 
     // 타입 변수 = 초기값
