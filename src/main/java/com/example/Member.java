@@ -6,9 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 // 직접 실행 불가능 파일
 // Main.java 에서 실행할 예정
 // 회원가입
+
 @ToString
 @Setter
 @Getter
@@ -19,7 +21,7 @@ public class Member {
     
     //타입 변수=초기값
     String id = null;   // 문자열
-    String password = null; 
+    String password = null;
     String name = null;
     int age = 20;
     String email = null;

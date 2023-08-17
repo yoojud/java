@@ -5,11 +5,9 @@ import java.util.Date;
 
 import org.junit.Test;
 
-public class AppTest
-{
+public class AppTest {
     @Test
-    public void test1()
-    {
+    public void test1() {
         Member m = new Member();
         m.setId("aaa");
         m.setPassword("bbb");
@@ -21,28 +19,26 @@ public class AppTest
     }
 
     @Test
-    public void test2()
-    {
+    public void test2() {
         System.out.println("aaa");
     }
 
     @Test
-    public void test3()
-    {
+    public void test3() {
         Board b = new Board();
         b.setHit(9);
         b.setTitle("일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼");
         b.setContent("내용입니다.");
         b.setNo(1001);
-        b.setWriter("작성자입니다.");;
+        b.setWriter("작성자입니다.");
+        ;
         System.out.println(b.toString());
         System.out.println(b.updateHit());
         System.out.println(b.cutTitle());
     }
 
     @Test
-    public void test4()
-    {
+    public void test4() {
         Item i = new Item();
         i.setNo(001L);
         i.setName("물품명");
@@ -59,8 +55,7 @@ public class AppTest
 
     @Test
     // 물품 n개 테스트용
-    public void itemListTest()
-    {
+    public void itemListTest() {
         // 클래스 객체 = new 생성자()
         ArrayList<Item> list = new ArrayList<>();
 
@@ -79,7 +74,7 @@ public class AppTest
         i1.setContent("맛있음");
         i1.setPrice(23000);
         i1.setRegdate(new Date());
-        
+
         Item i2 = new Item();
         i2.setNo(003L);
         i2.setName("귤");
@@ -96,13 +91,12 @@ public class AppTest
     }
 
     @Test
-    public void repositoryTest()
-    {
+    public void repositoryTest() {
         // 설계도면 객체명 = new 생성자()
         Repository obj = new Work1();
 
         Item i = new Item();
-        
+
         i.setNo(004L);
         i.setName("배");
         i.setQuantity(20);
@@ -111,20 +105,19 @@ public class AppTest
         i.setRegdate(new Date());
 
         int ret = obj.insertItem(i);
-        System.out.println(ret); //0 또는 1
-        
+        System.out.println(ret); // 0 또는 1
+
         // obj.printItem(i);
         // ArrayList<Item> list = new ArrayList<>();
         // list.add(i);
         // obj.printItemList(list);
         // obj.insertItem(null);
     }
-    
-    //213
+
+    // 213
 
     @Test
-    public void printItemList()
-    {
+    public void printItemList() {
         Repository obj = new Work1();
         obj.printItemList();
     }
@@ -153,5 +146,44 @@ public class AppTest
         obj.printBoardList();
     }
 
+    @Test
+    public void parentClassTest() {
+        // 객체 생성
+        Parent p = new Parent("가나다", 10);
+        // 객체 내용 출력
+        System.out.println(p.toString());
+        // 객체를 이용한 work메소드 출력
+        p.work();
+    }
 
+    @Test
+    public void childTest() {
+        // 객체 생성
+        Child1 c = new Child1();
+        // work 메소드 호출
+        c.work();
+    }
+
+    @Test
+    public void child2Test() {
+        Parent c = new Child2();
+        c.work();
+    }
+
+    @Test
+    public void insertMember() {
+        MemberService ms = new MemberServiceImpl();
+        Member m = new Member();
+        m.setId("2");
+        m.setPassword("123");
+        m.setName("가나다");
+        m.setAge(22);
+        m.setEmail("123@com");
+        m.setPhone("010-0000-0000");
+        m.setRegdate(new Date());
+        
+        int ret = ms.insertMember(m);
+        System.out.println(ret);
+
+    }
 }

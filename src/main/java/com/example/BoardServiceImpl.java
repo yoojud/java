@@ -48,5 +48,4 @@ public class BoardServiceImpl implements BoardService {
             System.out.println(doc.toString());
         }
     }
-    
 }
